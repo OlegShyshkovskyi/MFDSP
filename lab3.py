@@ -4,11 +4,6 @@ from typing import List
 
 PI = math.pi
 
-def generate_s_nt(n: int) -> List[float]:
-    value = 96 + n
-    bin_str = bin(value)[2:].zfill(8)[-8:]
-    return [float(b) for b in bin_str]
-
 class FourierCoefficient:
     def __init__(self, ak=0.0, bk=0.0):
         self.Ak = ak
@@ -85,7 +80,7 @@ def fft(a, invert, ops: OperationCount):
 def main():
 
     n_variant = 20
-    base_signal = generate_s_nt(n_variant)
+    base_signal = [0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0]
     N = 8
 
     print(f"Number N = 96 + {n_variant} = {96 + n_variant}")
